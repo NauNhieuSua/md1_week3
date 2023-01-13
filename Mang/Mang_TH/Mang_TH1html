@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="nhapLieu">
+<button id="themVao" onclick="themVao()" value="themVao" > Nhập đầu vào</button>
+<button id="xuatDuLieu" onclick="xuatDuLieu()" value="xuatRa">Xuất Dữ liệu</button>
+<div id="ketQua"></div>
+</body>
+</html>
+
+<script>
+    let a = 0
+    let dauvao = []
+function themVao(){
+    dauvao[a] = document.getElementById("nhapLieu").value;
+    alert(" Đã thêm " + dauvao[a] +" vào mảng" + a);
+    a++;
+    document.getElementById("nhapLieu").value = ""
+}
+function xuatDuLieu() {
+    ketqua = "<hr/>";
+    for( let i =0; i< dauvao.length;i++){
+        ketqua += "Đầu vào " + i + "=" + dauvao[i] + "<br>"
+}document.getElementById("ketQua").innerHTML = ketqua;
+}
+</script>
