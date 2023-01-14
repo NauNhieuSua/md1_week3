@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BÀi tập 2c</title>
+</head>
+<body>
+<p>Nhập số a: <input type="text" id="soA"></p>
+<p>Nhập số b: <input type="text" id="soB"></p>
+<button onclick="tinhTong()">tổng từ a đên b:</button>
+<p id ="ketqua"></p>
+</body>
+</html>
+
+<script>
+    function tinhTong() {
+        let a = Number(document.getElementById("soA").value)
+        let b = Number(document.getElementById("soB").value)
+        let tong = 0
+
+        if (a<b) {
+            for (let i = 0; a<=b; i++) {
+              tong+=a;
+              a++
+            }document.getElementById("ketqua").innerHTML= tong
+        } else if (a>b){
+            for (let i = 0; b<=a; i++) {
+                tong+=b;
+                b++
+            }document.getElementById("ketqua").innerHTML= tong
+        } else {
+            document.getElementById("ketqua").innerHTML = a
+        }
+    }
+
+</script>

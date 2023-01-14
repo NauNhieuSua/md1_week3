@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BÀi tập 2b</title>
+</head>
+<body>
+<p>Nhập số a: <input type="text" id = "soA" onchange="binhphuongA()"></p>
+<p>Nhập số b: <input type="text" id = "soB" onchange="binhphuongB()"></p>
+<p id="ketquaA"></p>
+<p id="ketquaB"></p>
+</body>
+</html>
+<script>
+function binhphuongA() {
+  let a = document.getElementById("soA").value
+  let c = Math.pow(a,2)
+  document.getElementById("ketquaA").innerHTML= " Bình phương của a :" + c
+}
+function binhphuongB() {
+  let b = document.getElementById("soB").value
+  let c = Math.pow(b,2)
+  document.getElementById("ketquaB").innerHTML= " Bình phương của b :" + c
+}
+</script>

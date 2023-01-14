@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    let num =+prompt("Nhập năm cần kiểm tra thế kỷ");
+    let theky =0;
+    if(num<=100) {
+        alert("Năm "+ num + " thuộc thế kỉ thứ 1");
+    } else if (num%100===0){
+        theky = num/100;
+        alert("năm " + num + " thuộc thế kỷ: " + theky);
+    } else {
+        let namdu = num%100;
+        theky = (num-namdu)/100 +1;
+        alert("năm " + num + " thuộc thế kỷ: " + theky);
+    }
+
+</script>

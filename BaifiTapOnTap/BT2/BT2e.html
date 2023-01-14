@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p> Cạnh a: <input type="text" id="canhA"></p>
+<p> Cạnh b: <input type="text" id="canhB"></p>
+<p> Cạnh c: <input type="text" id="canhC"></p>
+<button onclick="kiemTraTamGiac()"> Kiểm tra là tam giác ?</button>
+<p id="ketqua"></p>
+</body>
+</html>
+
+    <script>
+
+    function kiemTraTamGiac() {
+
+        let a = Number(document.getElementById("canhA").value);
+        let b = Number(document.getElementById("canhB").value);
+        let c = Number(document.getElementById("canhC").value);
+
+        if (a > 0 && b > 0 && c > 0 && a + b > c && a + c > b && b + c > a) {
+            if (a == b && a == c) {
+                result = "Ba cạnh " + a + " và " + b + " và " + c + " là 3 cạnh của tam giác đều"
+                document.getElementById("ketqua").innerHTML = result
+            }
+            else if (a == b  || a == c  || b == c  ) {
+                result = "Ba cạnh " + a + " và " + b + " và " + c + " là 3 cạnh của tam giác cân";
+                document.getElementById("ketqua").innerHTML = result;
+
+            } else if ((a*a==b*b+c*c) || (b*b==a*a+c*c) || (c*c==a*a+b*b)) {
+                result = "Ba cạnh " + a + " và " + b + " và " + c + " là 3 cạnh của tam giác vuông"
+                document.getElementById("ketqua").innerHTML = result
+            } else {
+                result = "Ba cạnh " + a + " và " + b + " và " + c + " là 3 cạnh của tam giác "
+                document.getElementById("ketqua").innerHTML = result
+            }
+        } else {
+            result = "Ba cạnh " + a + " và " + b + " và " + c + "  không là 3 cạnh của tam giác "
+            document.getElementById("ketqua").innerHTML = result
+        }
+    }
+    </script>
