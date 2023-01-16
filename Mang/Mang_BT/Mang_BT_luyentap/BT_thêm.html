@@ -14,25 +14,23 @@
     for (let i = 0; i < arr.length; i++) {
         arr[i]=+prompt("Nhập các phần tu")
     }
-    let max=0
-    for (let j = 0; j < arr.length; j++) {
-        if(arr[j]>max){
-            max=arr[j]
-        }
-    }
-    for (let k = 0; k < arr.length;) {
-        if (arr[k] === max) {
-            arr.splice(k, 1)
+    let max=arr[0]
+    let max2=0
 
+    let b = 0
+    for (let i = 1; i < arr.length;) {
+        b = arr[i]
+
+    if (b == max){
+    arr.splice(i,1)
+    } else if (b>max) {
+            max2 = max
+        max=b
+        i++
         } else {
-            k++;
+            max2 =b
+            i++
         }
-    }
-     let max2 = 0
-    for (let g = 0; g <arr.length ; g++) {
-        if(arr[g]>max2){
-            max2=arr[g]
-        }
-
     } document.write(max2)
+
 </script>
