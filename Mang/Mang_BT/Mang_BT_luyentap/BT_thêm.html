@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>baài tập thêm</title>
+</head>
+<body>
+</body>
+</html>
+
+<script>
+    let arr =[]
+   arr.length=+prompt("Nhập số lượng phần tử")
+    for (let i = 0; i < arr.length; i++) {
+        arr[i]=+prompt("Nhập các phần tu")
+    }
+    let max=0
+    for (let j = 0; j < arr.length; j++) {
+        if(arr[j]>max){
+            max=arr[j]
+        }
+    }
+    for (let k = 0; k < arr.length;) {
+        if (arr[k] === max) {
+            arr.splice(k, 1)
+
+        } else {
+            k++;
+        }
+    }
+     let max2 = 0
+    for (let g = 0; g <arr.length ; g++) {
+        if(arr[g]>max2){
+            max2=arr[g]
+        }
+
+    } document.write(max2)
+</script>

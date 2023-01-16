@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+  let a = [10,434,535,33,3,56,43,4,56,5]
+  // for (let i = 0; i < 10; i++) {
+  //   if(a[i]>=10){
+  //    let b = a[i] + " tại vị trí " + i +"<br>"
+  //     document.write(b)
+  //   }
+  // }
+
+  let max = a[0]
+  sum= 0
+  for (let i = 1; i < 10; i++) {
+      if(a[i]>max){
+          max=a[i]
+      }
+  }document.write(max)
+
+  for (let i = 0; i <10 ; i++) {
+      sum+=a[i]
+  } alert(sum/a.length)
+</script>

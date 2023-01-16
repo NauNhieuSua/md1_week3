@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+  let arr=[]
+  arr.length=+prompt(" Số lượng phần tử cần nhập");
+  for (let i = 0; i < arr.length; i++) {
+    arr[i]=+prompt(" Nhập các phần tử trong mảng arr")
+  }
+  arr.sort(function(a, b) {
+    return b - a
+  })
+  document.write(arr);
+</script>
