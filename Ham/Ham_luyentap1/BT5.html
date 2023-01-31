@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+  let ngoiSao = ['Polaris','Aldebaran','Deneb','Vega','Altair','Dubhe','Regulus'];
+  let chomSao = ['UrsaMinor','Tarurus','Cygnus','Lyra','Aquila','UrsaMajor','Leo'];
+  function timChomSao(a) {
+    let index = 0 ;
+    for (let i = 0; i < ngoiSao.length; i++) {
+      if(a==ngoiSao[i]){
+        index=i;
+        return chomSao[index]
+      }
+    }return " a không phải là chòm sao "
+    }
+
+    let a = prompt("Nhập ngôi sao")
+  alert(timChomSao(a))
+
+
+</script>

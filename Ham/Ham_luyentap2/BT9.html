@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+  function vitri(a,b) {
+      let count = 0
+      for (let i = 0; i < a.length; i++) {
+          if (a[i] == b) {
+              result = true
+              count++
+          }
+      }return count
+  }
+  let a = []
+  a.length=+prompt(" Nhập số lượng mảng a")
+  for (let i = 0; i < a.length; i++) {
+    a[i]= +prompt("Nhập phần tử mảng a")
+  }
+  let b =+prompt(" số cần kiểm tra")
+  if(vitri(a,b)==0){
+      alert(-1)
+  }else {
+      alert(vitri(a,b))
+  }
+</script>

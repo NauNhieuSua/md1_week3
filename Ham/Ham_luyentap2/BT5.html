@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+function min(a,b,c) {
+  let min1 = 0
+  if (a < b) {
+    if (a < c) {
+      min1 = a
+      return min1
+    } else {
+      min1 = c
+      return min1
+    }
+  } else if (b < c) {
+    min1 = b
+    return min1
+  } else {
+    min1 = c
+    return min1
+  }
+}
+  let a =+prompt("nhập số a");
+  let b =+prompt("nhập số b");
+  let c =+prompt("nhập số c");
+  alert(min(a,b,c))
+
+
+</script>

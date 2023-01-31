@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  function tangDan(arr){
+    let count =0
+    for (let i = 1; i <arr.length; i++) {
+      if (arr[i] > arr[i-1]) {
+        count++
+      }
+    }
+    if(count==arr.length-1){
+      resule = true
+    }else {
+      resule = false
+    }
+    return resule
+  }
+  let arr = [1,2,3,4,6,7]
+  console.log(tangDan(arr))
+</script>

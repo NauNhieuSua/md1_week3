@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+let arrNumber = []
+for (let i = 0; ; i++) {
+  let value = prompt(" Nhập phần tử là số")
+  if(value===''|| value===null || !isFinite(value))
+    break;
+  arrNumber.push(+value)
+}
+let sum = 0
+for ( i = 0; i < arrNumber.length; i++) {
+  sum+=arrNumber[i]
+}
+console.log(sum)
+</script>

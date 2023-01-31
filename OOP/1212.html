@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  function main() {
+    const chieuDai = Number(prompt("Nhập chiều dài", 1))
+    const chieuRong = Number(prompt("Nhập chiều rộng", 1))
+    let canhDai = ''
+    // Cạnh dài, nhưng rỗng ở giữa
+    let canhDaiRong = ''
+
+    for (let j = 1; j <= chieuRong; j++) {
+      canhDai += '*'
+      if (j == 1 || j == chieuRong) {
+        canhDaiRong += '*'
+      } else {
+        canhDaiRong += ' '
+      }
+    }
+
+    for (let i = 1; i <= chieuDai; i++) {
+      if (i == 1 || i == chieuDai) {
+        document.write(canhDai)
+      } else {
+        document.write(canhDaiRong)
+      }
+    }
+  }
+  main()
+</script>

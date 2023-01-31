@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  let arr =[]
+  arr.length= +prompt("Nhập số lượng phần tử")
+  for (let i = 0; i < arr.length; i++) {
+    arr[i]=prompt("Nhập các phần tu")
+  }
+  arr.sort(function (a,b){
+    return b-a
+  })
+for(let i=0;i<arr.length;i++){
+    if(arr[i]<0){
+        document.write(arr[i] + "<br>")
+    }
+}
+
+  // if(arr[0]===arr[arr.length-1]){
+  //   document.write(" tất cả các phần tử trùng nhau")
+  // }else {
+  //   for (let i = 1; i < arr.length;) {
+  //     if (arr[i] == arr[i - 1]) {
+  //       if (arr[i] == arr[i + 1]) {
+  //         arr.splice(i - 1, 1)
+  //       } else {
+  //         arr.splice(i - 1, 2)
+  //       }
+  //     } else {
+  //       i++
+  //     }
+  //   }
+  // }
+console.log(arr)
+  </script>

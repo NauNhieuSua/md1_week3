@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+  function doiXung(arr){
+    let count =0
+          for (let i = 0; i <arr.length; i++) {
+            if (arr[i] == arr[arr.length - 1 - i]) {
+              count++
+            }
+          }
+          if(count==arr.length){
+            resule = 'Mảng [' +arr + "] là mảng đối xứng"
+          }else {
+            resule = 'Mảng ' +arr + " không là mảng đối xứng"
+          }
+      alert(resule)
+  }
+  let arr = prompt("Nhập dãy cần kiểm tra")
+  doiXung(arr)
+</script>

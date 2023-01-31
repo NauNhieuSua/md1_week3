@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+  function soTrung(arr){
+
+      let a = 0
+      let count = 0
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = i+1; j <arr.length ; j++) {
+        if(arr[i]==arr[j]){
+            a = arr[i]
+          break;
+        }
+      }
+    }
+      for (let i = 0; i < arr.length; i++) {
+        if (a==arr[i])  {
+            count++
+        }
+      } console.log(count)
+  }
+  let arr = prompt("nhập dãy arr")
+  soTrung(arr)
+</script>

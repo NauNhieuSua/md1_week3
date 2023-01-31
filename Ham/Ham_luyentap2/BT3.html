@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+  function giaithua(a){
+    if(a<=0){
+       alert("Không tính được giai thừa")
+    }else {
+        let tich = 1
+        for (let i = 1; i <= a; i++) {
+            tich *= i
+        }
+        alert(tich)
+    }
+  }
+
+  let a = +prompt("Nhập số a")
+ giaithua(a)
+</script>
