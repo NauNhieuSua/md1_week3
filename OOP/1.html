@@ -10,15 +10,45 @@
 </html>
 
 <script>
-    function findAvg(arr) {
-        let sum = 0
-        let avg = 0
-        for (i = 0; i < arr.length; i++) {
-            sum = sum + arr[i]
-        }
-        avg=sum/arr.length
-        return avg;
+   let s = '07:15:25AM'
+   let tui = s.split("")
+   let tui1 = ""
+if(tui.indexOf('P')!=-1){
+    if(tui[0]==1&&tui[1]==2){
+        tui.pop()
+        tui.pop()
+       tui1= tui.join('')
+    }else {
+        tui.pop()
+        tui.pop()
+        tui[0]=Number(tui[0])+1
+        tui[1]=Number(tui[1])+2
+        tui1= tui.join('')
     }
-let a = [1,2,3,4]
-    console.log(findAvg(a))
+}else if(tui.indexOf('A')!=-1){
+    if(tui[0]==1&&tui[1]==2){
+        tui.pop()
+        tui.pop()
+        tui[0]=0
+        tui[1]=0
+        tui1= tui.join('')
+    }else {
+        tui.pop()
+        tui.pop()
+        tui1= tui.join('')
+    }
+}
+   console.log(tui1)
+
+
+
+   //
+   // // let times = tui[2].replace('25PM','25')
+   // let times = '25PM'
+   // for (let i = 0; i < tui.length; i++) {
+   //     if(tui[i]=== times){
+   //         tui[i].replace('PM','')
+   //     }
+   // }
+   // console.log(tui[2])
 </script>

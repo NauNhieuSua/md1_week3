@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css" >
+        .panel_Tong{
+            display: flex;
+        }
+.panel {
+    width: 30%;
+    border: solid blue 1px;
+}
+.panel1 {
+     width: 60%;
+     margin: 0 auto;
+ }
+.panel_heading {
+    background-color: #4267b2;
+    padding: 5px;
+    color: wheat;
+}
+.panel_body{
+    padding: 10px;
+}
+.panel_body1{
+    padding: 10px;
+    border: solid blue 1px;
+
+}
+.panel_body label{
+    font-weight: bold;
+}
+.form_group{
+    display: block;
+    margin-bottom:15px;
+    font-size: 16px;
+}
+.form_control{
+    display: block;
+    width: 98%;
+    margin-top: 5px;
+}
+.table{
+    width: 100%;
+}
+. table tr {
+    border: 1px;
+}
+    </style>
+</head>
+<body>
+<div class="panel_Tong">
+<div class="panel">
+    <div class="panel_heading">
+        Nhập điểm kiểm tra đầu vào
+    </div>
+    <div class="panel_body">
+        <form action="post">
+            <div class="form_group">
+                <label>Mã học sinh:</label>
+                <input class="form_control" type="text" name="maHocSinh"
+                       id="maHocSinh" placeholder="Nhập mã học sinh">
+            </div>
+            <div class="form_group">
+                <label>Họ và Tên:</label>
+                <input class="form_control" type="text" name="tenHocSinh"
+                       id="tenHocSinh" placeholder="Nhập tên học sinh">
+            </div>
+            <div class="form_group">
+                <label>Khu vực:</label>
+                <select class="form_control" id="khuVuc" onchange="thaydoiKhuvuc()">
+                    <option value="">Chọn</option>
+                </select>
+            </div>
+            <div class="form_group">
+                <label>Trường:</label>
+                <select class="form_control" id="truong">
+
+                </select>
+            </div>
+            <div class="form_group">
+                <label>Điểm thi tốt nghiệp</label>
+                <input class="form_control" type="number" name="diemThi" id="diemThi"
+                       placeholder="Nhập điểm thi" value="0" onkeyup="capnhapDiemthi()">
+            </div>
+            <div class="form_group">
+                <label>Xếp loại</label>
+                <input class="form_control" type="text" name="xepLoai"
+                       id="xepLoai" disabled="true">
+            </div>
+            <button class="btn btn-success" type="button" onclick="luuthongtin()">Lưu thông tin</button>
+            <button class="btn btn-danger" type="reset">Reset</button>
+        </form>
+    </div>
+</div>
+<div class="panel1">
+    <div class="panel_heading">
+        Bảng điểm kiểm tra đầu vào codegym
+    </div>
+    <div class="panel_body1">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Mã học sinh</th>
+                <th>Họ và tên</th>
+                <th>Khu vực</th>
+                <th>Trường</th>
+                <th>Điểm thi</th>
+                <th>Xếp hạng</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody id="result">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button class="btn btn-warning">Edit</button></td>
+                <td><button class="btn btn-danger">Xóa</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
+<script>
+let khuvucList = {
+    'KVMB': [
+        "codegym Hà Nội", "codegym Phú Thọ", "codegym Bắc Giang"
+    ],
+    'KVMT':[
+        "codegym Nghệ An", " codegym Đà Nẵng","codegym Quảng Nam"
+    ],
+    'KVMN':[
+        "codegym Hò Chí Minh", "codegym Bình Dương", "codegym Vũng Tàu"
+    ]
+}
+let khuvucTag = document.getElementById('khuVuc')
+    for( key in khuvucList) {
+        khuvucTag.innerHTML+= `<option value='${key}'>${key}</option>`
+    }
+
+    function thaydoiKhuvuc() {
+        key = khuvucTag.value
+        truongLíst = khuvucList[key]
+        console.log(truongLíst)
+        let truongTag = document.getElementById('truong')
+        truongTag.innerHTML =''
+        if (truongLíst != null) {
+            for (let i = 0; i < truongLíst.length; i++) {
+                truongTag.innerHTML += `<option value='${truongLíst[i]}'>${truongLíst[i]}</option>`
+            }
+        }
+    }
+    function capnhapDiemthi() {
+        let diemthi = document.getElementById('diemThi').value
+        if(diemthi<50){
+            document.getElementById("xepLoai").value = 'Loại'
+        }else if(diemthi<75){
+            document.getElementById("xepLoai").value = 'Đạt'
+        }else if(diemthi<90){
+            document.getElementById("xepLoai").value = 'Khá'
+        }else {
+            document.getElementById("xepLoai").value = 'Giỏi'
+        }
+    }
+
+    function luuthongtin()  {
+        let mahocsinh = document.getElementById('maHocSinh').value
+        let tenhocsinh = document.getElementById('tenHocSinh').value
+        let khuvuthi = document.getElementById('khuVuc').value
+        let truongthi = document.getElementById('truong').value
+        let diemthi = document.getElementById('diemThi').value
+
+    }
+
+
+</script>
