@@ -8,11 +8,11 @@
             display: flex;
         }
 .panel {
-    width: 30%;
+    width: 25%;
     border: solid blue 1px;
 }
 .panel1 {
-     width: 60%;
+     width: 65%;
      margin: 0 auto;
  }
 .panel_heading {
@@ -46,6 +46,18 @@
 }
 . table tr {
     border: 1px;
+}
+.table td {
+    margin: 0 auto;
+}
+.search{
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 93%;
+    font-size: 16px;
+    padding: 5px 5px 10px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
 }
     </style>
 </head>
@@ -98,31 +110,26 @@
     <div class="panel_heading">
         Bảng điểm kiểm tra đầu vào codegym
     </div>
+    <div>
+        <input class="search" type="text" id="myInput" onkeyup="myFunction()" placeholder="Tìm kiếm ">
+    </div>
     <div class="panel_body1">
-        <table class="table">
+        <table class="table" id="table" >
             <thead>
             <tr>
+                <th>STT</th>
                 <th>Mã học sinh</th>
                 <th>Họ và tên</th>
                 <th>Khu vực</th>
-                <th>Trường</th>
-                <th>Điểm thi</th>
+                <th>Địa điểm kiểm tra</th>
+                <th> Điểm thi </th>
                 <th>Xếp hạng</th>
                 <th></th>
                 <th></th>
             </tr>
             </thead>
             <tbody id="result">
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><button class="btn btn-warning">Edit</button></td>
-                <td><button class="btn btn-danger">Xóa</button></td>
-            </tr>
+
             </tbody>
         </table>
     </div>
@@ -172,15 +179,79 @@ let khuvucTag = document.getElementById('khuVuc')
             document.getElementById("xepLoai").value = 'Giỏi'
         }
     }
-
+let count=0
     function luuthongtin()  {
         let mahocsinh = document.getElementById('maHocSinh').value
         let tenhocsinh = document.getElementById('tenHocSinh').value
-        let khuvuthi = document.getElementById('khuVuc').value
+        let khuvucthi = document.getElementById('khuVuc').value
         let truongthi = document.getElementById('truong').value
         let diemthi = document.getElementById('diemThi').value
+        let xepLoai = document.getElementById('xepLoai').value
 
+        let hocsinh = {
+            'mahocsinh' : mahocsinh,
+            'tenhocsinh': tenhocsinh,
+            'khuvuthi': khuvucthi,
+            'truongthi': truongthi,
+            'diemthi': diemthi,
+            'xepLoai' : xepLoai,
+        }
+        hocsinhList.push(hocsinh)
+        document.getElementById('result').innerHTML+=`<tr>
+                <td>${++count}</td>
+                <td>${mahocsinh}</td>
+                <td>${tenhocsinh}</td>
+                <td>${khuvucthi}</td>
+                <td>${truongthi}</td>
+                <td>${diemthi}</td>
+                <td>${xepLoai}</td>
+                <td><button class="btn btn-warning">Edit</button></td>
+                <td><button class="btn btn-danger" onclick="deletehocsinh(${count-1})">Xóa</button></td>
+            </tr>`
     }
+function deletehocsinh(index){
+    console.log(index)
+    hocsinhList.splice(index,1)
+    showhocsinh()
+}
+
+    function showhocsinh(){
+        document.getElementById('result').innerHTML = ''
+        for (let i = 0; i < hocsinhList.length; i++) {
+            document.getElementById('result').innerHTML+=`<tr>
+                <td>${i+1}</td>
+                <td>${hocsinhList[i].mahocsinh}</td>
+                <td>${hocsinhList[i].tenhocsinh}</td>
+                <td>${hocsinhList[i].khuvucthi}</td>
+                <td>${hocsinhList[i].truongthi}</td>
+                <td>${hocsinhList[i].diemthi}</td>
+                <td>${hocsinhList[i].xepLoai}</td>
+                <td><button class="btn btn-warning">Edit</button></td>
+                <td><button class="btn btn-danger" onclick="deletehocsinh(${i})">Xóa</button></td>
+            </tr>`
+        }
+    }
+
+function myFunction() {
+
+    let input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("table");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
 
 
 </script>

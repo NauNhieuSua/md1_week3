@@ -1,0 +1,58 @@
+.panel_Tong{
+    display: flex;
+}
+.panel {
+    width: 25%;
+    border: solid blue 1px;
+}
+.panel1 {
+    width: 65%;
+    margin: 0 auto;
+}
+.panel_heading {
+    background-color: #4267b2;
+    padding: 5px;
+    color: wheat;
+}
+.panel_body{
+    padding: 10px;
+}
+.panel_body1{
+    padding: 10px;
+    border: solid blue 1px;
+
+}
+.panel_body label{
+    font-weight: bold;
+}
+.form_group{
+    display: block;
+    margin-bottom:15px;
+    font-size: 16px;
+}
+.form_control{
+    display: block;
+    width: 98%;
+    margin-top: 5px;
+}
+.table{
+    width: 100%;
+}
+. table tr {
+    border: 1px;
+}
+.table td {
+    margin: 0 auto;
+}
+.search {
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 93%;
+    font-size: 16px;
+    padding: 5px 5px 10px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+.error{
+    color: red;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="renderhocsinhList()">
+<div class="panel_Tong">
+    <div class="panel">
+        <div class="panel_heading">
+            Nhập điểm kiểm tra đầu vào
+        </div>
+        <div class="panel_body">
+            <form action="post">
+                <div class="form_group">
+                    <label>Mã học sinh:</label>
+                    <input class="form_control" type="text" name="maHocSinh"
+                           id="maHocSinh" placeholder="Nhập mã học sinh">
+                    <span id="mahocsinh-error" class="error"></span>
+                </div>
+                <div class="form_group">
+                    <label>Họ và Tên:</label>
+                    <input class="form_control" type="text" name="tenHocSinh"
+                           id="tenHocSinh" placeholder="Nhập tên học sinh">
+                    <span id="tenhocsinh-error" class="error" ></span>
+                </div>
+                <div class="form_group">
+                    <label>Khu vực:</label>
+                    <select class="form_control" id="khuVuc" onchange="thaydoiKhuvuc()">
+                        <option value="">--Choose--</option>
+                    </select>
+
+                </div>
+                <div class="form_group">
+                    <label>Trường:</label>
+                    <select class="form_control" id="truong">
+
+                    </select>
+                </div>
+                <div class="form_group">
+                    <label>Điểm thi tốt nghiệp</label>
+                    <input class="form_control" type="number" name="diemThi" id="diemThi"
+                           placeholder="Nhập điểm thi" value="" onkeyup="capnhapDiemthi()">
+                    <span id="diemthi-error" class="error" ></span>
+                </div>
+                <div class="form_group">
+                    <label>Xếp loại</label>
+                    <input class="form_control" type="text" name="xepLoai"
+                           id="xepLoai" disabled="true">
+                </div>
+                <button class="btn btn-success" type="button" onclick="luuthongtin()">Lưu thông tin</button>
+                <button class="btn btn-danger" type="reset">Reset</button>
+            </form>
+        </div>
+    </div>
+    <div class="panel1" id="hocsinh-list">
+        <div class="panel_heading">
+            Bảng điểm kiểm tra đầu vào
+        </div>
+        <div>
+            <input class="search" type="text" id="myInput" onkeyup="myFunction()" placeholder="Tìm kiếm ">
+        </div>
+        <div class="panel_body1">
+            <table class="table" id="table" >
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="Case_Nhập%20đầu%20vào%20học%20sinh.js">
+</script>
+</body>
+</html>

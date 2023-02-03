@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="in"></h1>
+<script>
+  let a =5
+  let obj = {
+    name : 'Hai',
+    age: 30
+  }
+  JSON.stringify(obj)
+  console.log(JSON.stringify(obj))
+  let chuyen = JSON.parse(JSON.stringify(obj))
+  console.log(chuyen)
+  localStorage.setItem('demo',a)
+  localStorage.setItem('obj',JSON.stringify(obj))
+  let kq = JSON.parse(localStorage.getItem('obj') )
+  document.getElementById('in').innerHTML = `Gia tri cua key la : ${kq.name}`
+</script>
+</body>
+</html>
